@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:background="@drawable/square"
+        android:alpha="0.80"/>
+
+    <ImageView
+        android:id="@+id/zoologo"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:src="@drawable/logo"
+        android:layout_marginTop="70dp"/>
+
+
+
+    <TextView
+        android:id="@+id/signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome To Indonesian BreastFeeding"
+        android:textColor="#ffffff"
+        android:textSize="17dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/zoologo"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        />
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signin"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/etLoginUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:hint="USERNAME"
+            android:inputType="text"
+            android:paddingLeft="8dp"
+            android:textColorHint="#C16B09"
+            android:textSize="13dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#C16B09"
+            android:layout_marginTop="10dp"
+
+            >
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etLoginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="#00000000"
+            android:hint="PASSWORD"
+            android:inputType="textPassword"
+            android:paddingLeft="8dp"
+            android:textColorHint="#C16B09"
+            android:textSize="13dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#C16B09"
+            android:layout_marginTop="10dp"
+            >
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textStyle="bold"
+            android:background="@drawable/round"
+            android:textColor="#CBD1DC"
+            android:gravity="center"
+            android:padding="14dp"
+            android:layout_marginTop="50dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:id="@+id/create"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Don't Have An Account ?"
+            android:textSize="13dp"
+            android:textColor="#C16B09"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password"
+            android:textSize="13dp"
+            android:textColor="#C16B09"
+
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>
