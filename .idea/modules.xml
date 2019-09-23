@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IBF_user.iml" filepath="$PROJECT_DIR$/IBF_user.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mamina-_ibf.iml" filepath="$PROJECT_DIR$/mamina-_ibf.iml" />
     </modules>
   </component>
 </project>

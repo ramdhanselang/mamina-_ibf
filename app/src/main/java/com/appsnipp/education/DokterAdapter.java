@@ -73,6 +73,6 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.MyViewHold
             iv = (CircleImageView) itemView.findViewById(R.id.iv);
         }
 
-    }.
+    }
 
 }

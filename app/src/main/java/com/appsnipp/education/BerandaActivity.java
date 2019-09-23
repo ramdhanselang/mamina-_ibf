@@ -36,7 +36,7 @@ public class BerandaActivity extends Fragment {
         User user = session.getUserDetails();
         TextView welcomeText = rootView.findViewById(R.id.welcome);
 
-        welcomeText.setText("Welcome "+user.getFullName());
+        welcomeText.setText("Welcome "+user.getPoin());
 
         Toolbar toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);

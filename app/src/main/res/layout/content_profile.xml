@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/whiteBodyColor"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ProfileActivity"
     tools:showIn="@layout/activity_profile">
@@ -34,9 +35,9 @@
 
                 <TextView
                     android:id="@+id/nameTextView"
-                    android:text="SiTampan"
+                    style="@style/profileDetailsMiniText"
                     android:layout_toRightOf="@id/nameImageView"
-                    style="@style/profileDetailsMiniText" />
+                    android:text="SiTampan" />
 
             </RelativeLayout>
 
@@ -48,11 +49,12 @@
                     style="@style/profileDetailsImage" />
 
                 <TextView
-                    android:text="Mobile"
+                    android:text="No HP"
                     android:layout_toRightOf="@id/mobileImageView"
                     style="@style/profileDetailsTextMain"/>
 
                 <TextView
+                    android:id="@+id/no_hpTextView"
                     android:text="08132566775"
                     android:layout_toRightOf="@id/mobileImageView"
                     style="@style/profileDetailsMiniText" />
@@ -72,6 +74,7 @@
                     style="@style/profileDetailsTextMain" />
 
                 <TextView
+                    android:id="@+id/emailTextView"
                     android:text="developer@appsnipp.com"
                     android:layout_toRightOf="@id/emailImageView"
                     style="@style/profileDetailsMiniText" />
@@ -86,14 +89,35 @@
                     style="@style/profileDetailsImage" />
 
                 <TextView
-                    android:text="Address"
+                    android:text="Alamat"
                     android:layout_toRightOf="@id/addressImageView"
                     style="@style/profileDetailsTextMain" />
 
                 <TextView
+                    android:id="@+id/alamatTextView"
                     android:text="Avenue 2nd Street NW SY."
                     android:layout_toRightOf="@id/addressImageView"
                     style="@style/profileDetailsMiniText" />
+
+            </RelativeLayout>
+
+            <View style="@style/proifleDetailsView" />
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/ttlImageView"
+                    android:src="@drawable/location"
+                    style="@style/profileDetailsImage" />
+
+                <TextView
+                    android:text="Tempat, Tanggal Lahir"
+                    android:layout_toRightOf="@id/ttlImageView"
+                    style="@style/profileDetailsTextMain" />
+
+                <TextView
+                    android:id="@+id/ttlTextView"
+                    style="@style/profileDetailsMiniText"
+                    android:layout_toRightOf="@id/ttlImageView"
+                    android:text="19, Januari 1920" />
 
             </RelativeLayout>
 
@@ -110,6 +134,7 @@
                     style="@style/profileDetailsTextMain" />
 
                 <TextView
+                    android:id="@+id/poinTextView"
                     android:text="3"
                     android:layout_toRightOf="@id/dobImageView"
                     style="@style/profileDetailsMiniText" />

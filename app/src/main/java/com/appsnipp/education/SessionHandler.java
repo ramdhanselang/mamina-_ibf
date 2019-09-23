@@ -14,6 +14,11 @@ public class SessionHandler {
     private static final String KEY_USERNAME = "username";
     private static final String KEY_EXPIRES = "expires";
     private static final String KEY_FULL_NAME = "full_name";
+    private static final String KEY_EMAIL = "email";
+    private static final String KEY_TTL = "ttl";
+    private static final String KEY_NO_HP = "no_hp";
+    private static final String KEY_ALAMAT = "alamat";
+    private static final String KEY_POIN = "poin";
     private static final String KEY_EMPTY = "";
     private Context mContext;
     private SharedPreferences.Editor mEditor;
@@ -79,6 +84,11 @@ public class SessionHandler {
         User user = new User();
         user.setUsername(mPreferences.getString(KEY_USERNAME, KEY_EMPTY));
         user.setFullName(mPreferences.getString(KEY_FULL_NAME, KEY_EMPTY));
+        user.setEmail(mPreferences.getString(KEY_EMAIL, KEY_EMPTY));
+        user.setNoHp(mPreferences.getString(KEY_NO_HP, KEY_EMPTY));
+        user.setTtl(mPreferences.getString(KEY_TTL, KEY_EMPTY));
+        user.setAlamat(mPreferences.getString(KEY_ALAMAT, KEY_EMPTY));
+        user.setPoin(mPreferences.getString(KEY_POIN, KEY_EMPTY));
         user.setSessionExpiryDate(new Date(mPreferences.getLong(KEY_EXPIRES, 0)));
 
         return user;

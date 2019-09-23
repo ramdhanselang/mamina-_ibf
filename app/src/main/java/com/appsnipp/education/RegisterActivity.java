@@ -23,15 +23,28 @@ public class RegisterActivity extends AppCompatActivity {
     private static final String KEY_FULL_NAME = "full_name";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_PASSWORD = "password";
+    private static final String KEY_EMAIL = "email";
+    private static final String KEY_TTL = "ttl";
+    private static final String KEY_NO_HP = "no_hp";
+    private static final String KEY_ALAMAT = "alamat";
     private static final String KEY_EMPTY = "";
+    //TTL, email, no hp, point
     private EditText etUsername;
     private EditText etPassword;
     private EditText etConfirmPassword;
     private EditText etFullName;
+    private EditText etEmail;
+    private EditText etTTL;
+    private EditText etNohp;
+    private EditText etAlamat;
     private String username;
     private String password;
     private String confirmPassword;
     private String fullName;
+    private String email;
+    private String ttl;
+    private String noHp;
+    private String alamat;
     private ProgressDialog pDialog;
     private String register_url = "http://mamina.id/ibf/register.php";
     private SessionHandler session;
@@ -45,6 +58,10 @@ public class RegisterActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
         etFullName = findViewById(R.id.etFullName);
+        etEmail = findViewById(R.id.etEmail);
+        etTTL = findViewById(R.id.etTTL);
+        etNohp = findViewById(R.id.etNohp);
+        etAlamat = findViewById(R.id.etAlamat);
 
         Button login = findViewById(R.id.btnRegisterLogin);
         Button register = findViewById(R.id.btnRegister);
@@ -67,6 +84,10 @@ public class RegisterActivity extends AppCompatActivity {
                 password = etPassword.getText().toString().trim();
                 confirmPassword = etConfirmPassword.getText().toString().trim();
                 fullName = etFullName.getText().toString().trim();
+                email = etEmail.getText().toString().trim();
+                ttl = etTTL.getText().toString().trim();
+                noHp = etNohp.getText().toString().trim();
+                alamat = etAlamat.getText().toString().trim();
                 if (validateInputs()) {
                     registerUser();
                 }
@@ -103,6 +124,10 @@ public class RegisterActivity extends AppCompatActivity {
             request.put(KEY_USERNAME, username);
             request.put(KEY_PASSWORD, password);
             request.put(KEY_FULL_NAME, fullName);
+            request.put(KEY_EMAIL, email);
+            request.put(KEY_TTL, ttl);
+            request.put(KEY_NO_HP, noHp);
+            request.put(KEY_ALAMAT, alamat);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -165,6 +190,19 @@ public class RegisterActivity extends AppCompatActivity {
             etUsername.requestFocus();
             return false;
         }
+        if (KEY_EMPTY.equals(email)){
+            etEmail.setError("Email cannot be empty");
+        }
+        if (KEY_EMPTY.equals(ttl)) {
+            etTTL.setError("Tempat, Tanggal Lahir cannot be empty");
+        }
+        if (KEY_EMPTY.equals(noHp)) {
+            etNohp.setError("No HP cannot be empty");
+        }
+        if (KEY_EMPTY.equals(alamat)) {
+            etAlamat.setError("Alamat cannot be empty");
+        }
+
         if (KEY_EMPTY.equals(password)) {
             etPassword.setError("Password cannot be empty");
             etPassword.requestFocus();
