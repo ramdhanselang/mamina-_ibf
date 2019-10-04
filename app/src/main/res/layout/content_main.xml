@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.appsnipp.education.MainActivity"
+    tools:context="com.proyek.ibf.MainActivity"
     tools:showIn="@layout/activity_beranda"
     style="@style/parent.contentLayout">
 

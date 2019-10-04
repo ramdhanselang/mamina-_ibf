@@ -1,6 +1,5 @@
-package com.appsnipp.education;
+package com.proyek.ibf;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,22 +9,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.proyek.ibf.response.KonselorItem;
+import com.proyek.ibf.response.ResponseKonselor;
+import com.proyek.network.ApiServices;
+import com.proyek.network.InitRetrofit;
+
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BerandaActivity extends Fragment {
     private RecyclerView recyclerView;
-    private ArrayList<DokterModel> imageModelArrayList;
-    private DokterAdapter adapter;
+    private ArrayList<KonselorModel> imageModelArrayList;
     private SessionHandler session;
 
-    private int[] myImageList = new int[]{R.drawable.dokter1, R.drawable.dokter2,R.drawable.dokter3,R.drawable.dokter4,R.drawable.dokter5,R.drawable.dokter6,R.drawable.dokter7};
-    private String[] myImageNameList = new String[]{"Dokter1","Dokter2","Dokter3","Dokter4","Dokter5","Dokter6","Dokter7"};
     @Override
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -36,7 +43,7 @@ public class BerandaActivity extends Fragment {
         User user = session.getUserDetails();
         TextView welcomeText = rootView.findViewById(R.id.welcome);
 
-        welcomeText.setText("Welcome "+user.getPoin());
+        welcomeText.setText("Welcome "+user.getFullName());
 
         Toolbar toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
@@ -52,11 +59,8 @@ public class BerandaActivity extends Fragment {
         });
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.dokterlist);
-
-        imageModelArrayList = Dokter();
-        adapter = new DokterAdapter((Context) getActivity(), imageModelArrayList);
-        recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
+        tampilKonselor();
 
 
         ImageButton logoutBtn = (ImageButton) rootView.findViewById(R.id.logout);
@@ -73,18 +77,35 @@ public class BerandaActivity extends Fragment {
         return rootView;
     }
 
+    private void tampilKonselor() {
+        ApiServices api = InitRetrofit.getInstance();
+        // Siapkan request
+        Call<ResponseKonselor> beritaCall = api.request_show_all_konselor();
+        // Kirim request
+        beritaCall.enqueue(new Callback<ResponseKonselor>() {
+            @Override
+            public void onResponse(Call<ResponseKonselor> call, Response<ResponseKonselor> response) {
+                // Pasikan response Sukses
+                if (response.isSuccessful()){
+                    Log.d("response api", response.body().toString());
+                    // tampung data response body ke variable
+                    List<KonselorItem> data_konselor = response.body().getDokter();
+                    boolean status = response.body().isStatus();
+                    // Kalau response status nya = true
+                    // kalau tidak true
+                    if (status){
+                        // Buat Adapter untuk recycler view
+                        KonselorAdapter adapter = new KonselorAdapter(getContext(), data_konselor);
+                        recyclerView.setAdapter(adapter);
+                    }
+                }
+            }
 
-    private ArrayList<DokterModel> Dokter(){
-
-        ArrayList<DokterModel> list = new ArrayList<>();
-
-        for(int i = 0; i < 7; i++){
-            DokterModel dokterModel = new DokterModel();
-            dokterModel.setName(myImageNameList[i]);
-            dokterModel.setImage_drawable(myImageList[i]);
-            list.add(dokterModel);
-        }
-
-        return list;
+            @Override
+            public void onFailure(Call<ResponseKonselor> call, Throwable t) {
+                // print ke log jika Error
+                t.printStackTrace();
+            }
+        });
     }
 }

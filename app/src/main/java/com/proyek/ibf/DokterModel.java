@@ -1,4 +1,4 @@
-package com.appsnipp.education;
+package com.proyek.ibf;
 
 public class DokterModel {
 

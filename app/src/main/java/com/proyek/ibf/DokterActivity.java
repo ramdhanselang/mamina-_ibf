@@ -1,13 +1,13 @@
-package com.appsnipp.education;
+package com.proyek.ibf;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ListDokterActivity extends AppCompatActivity {
+public class DokterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_dokter);
+        setContentView(R.layout.activity_main_dokter);
     }
 }

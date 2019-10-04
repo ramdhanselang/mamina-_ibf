@@ -86,10 +86,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="Dokter"
+                    android:text="Deskripsi"
                     android:textSize="20dp" />
 
                 <TextView
+                    android:id="@+id/deskripsi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
@@ -102,85 +103,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="Dokter"
+                    android:text="Status"
                     android:textSize="20dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_weight="1"
-                    android:text="Women's running shoes"
-                    android:textSize="16dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="Dokter"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_weight="1"
-                    android:text="Women's running shoes"
-                    android:textSize="16dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="Dokter"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_weight="1"
-                    android:text="Women's running shoes"
-                    android:textSize="16dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="Dokter"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_weight="1"
-                    android:text="Women's running shoes"
-                    android:textSize="16dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="Dokter"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_weight="1"
-                    android:text="Women's running shoes"
-                    android:textSize="16dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="Dokter"
-                    android:textSize="20dp" />
-
-                <TextView
+                    android:id="@+id/status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
@@ -202,14 +129,14 @@
                 android:orientation="vertical" />
 
 
-                <TextView
-                    android:id="@+id/colortext"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="COLOUR" />
+            <TextView
+                android:id="@+id/colortext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="COLOUR" />
 
 
             <LinearLayout
@@ -221,15 +148,6 @@
                 android:orientation="vertical">
 
 
-                <TextView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="SIZE" />
-
                 <LinearLayout
                     android:id="@+id/qut"
                     android:layout_width="wrap_content"
@@ -237,18 +155,6 @@
                     android:layout_margin="20dp"
                     android:gravity="center"
                     android:orientation="horizontal">
-
-
-                    <TextView
-                        android:id="@+id/sizeno"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:background="#00000000"
-                        android:hint="0"
-                        android:inputType="number"
-                        android:maxLength="1"
-                        android:textSize="16dp" />
 
                 </LinearLayout>
 
@@ -273,7 +179,7 @@
         </RelativeLayout>
     </ScrollView>
     <TextView
-        android:id="@+id/buy"
+        android:id="@+id/Btnkonsul"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:background="@drawable/toolbarbg"

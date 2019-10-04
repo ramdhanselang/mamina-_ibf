@@ -1,4 +1,4 @@
-package com.appsnipp.education;
+package com.proyek.ibf;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class ProfileActivity extends Fragment {
     private SessionHandler session;
@@ -21,10 +19,10 @@ public class ProfileActivity extends Fragment {
         User user = session.getUserDetails();
         //NAMA atas
         TextView nama = rootView.findViewById(R.id.nama);
-        nama.setText(user.getFullName());
+        nama.setText(user.getUsername());
         //NAMA bwh
         TextView namal = rootView.findViewById(R.id.nameTextView);
-        namal.setText(user.getPoin());
+        namal.setText(user.getFullName());
         //NO HP
         TextView no_hp = rootView.findViewById(R.id.no_hpTextView);
         no_hp.setText(user.getNoHp());

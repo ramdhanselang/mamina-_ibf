@@ -1,4 +1,4 @@
-package com.appsnipp.education;
+package com.proyek.ibf;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -21,6 +21,11 @@ public class LoginActivity extends AppCompatActivity {
     private static final String KEY_STATUS = "status";
     private static final String KEY_MESSAGE = "message";
     private static final String KEY_FULL_NAME = "full_name";
+    private static final String KEY_POIN = "poin";
+    private static final String KEY_NO_HP = "no_hp";
+    private static final String KEY_ALAMAT = "alamat";
+    private static final String KEY_TTL = "ttl";
+    private static final String KEY_EMAIL = "email";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_PASSWORD = "password";
     private static final String KEY_EMPTY = "";
@@ -107,7 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                             //Check if user got logged in successfully
 
                             if (response.getInt(KEY_STATUS) == 0) {
-                                session.loginUser(username,response.getString(KEY_FULL_NAME));
+                                session.loginUser(username,response.getString(KEY_FULL_NAME),response.getString(KEY_NO_HP),response.getString(KEY_EMAIL),response.getString(KEY_ALAMAT),response.getString(KEY_TTL),response.getString(KEY_POIN));
                                 loadDashboard();
 
                             }else{
