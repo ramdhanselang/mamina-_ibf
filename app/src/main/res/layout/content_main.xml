@@ -157,6 +157,7 @@
                     style="@style/viewParent.headerText"/>
 
                 <TextView
+                    android:id="@+id/artikel"
                     android:layout_alignParentRight="true"
                     style="@style/viewParent"
                     android:text="Lihat Semua"
@@ -176,9 +177,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp">
 
-                <include layout="@layout/card_frutorials"/>
-                <include layout="@layout/card_frutorials"/>
-                <include layout="@layout/card_frutorials"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/ArtikelListRekomen"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"/>
 
             </LinearLayout>
 
@@ -213,9 +217,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp">
 
-                <include layout="@layout/card_frutorials"/>
-                <include layout="@layout/card_frutorials"/>
-                <include layout="@layout/card_frutorials"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/ArtikelListPopular"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"/>
 
             </LinearLayout>
 
@@ -250,9 +257,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp">
 
-                <include layout="@layout/card_frutorials"/>
-                <include layout="@layout/card_frutorials"/>
-                <include layout="@layout/card_frutorials"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/ArtikelListLastest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"/>
 
             </LinearLayout>
 

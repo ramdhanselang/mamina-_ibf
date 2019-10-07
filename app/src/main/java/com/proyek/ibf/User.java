@@ -3,6 +3,7 @@ package com.proyek.ibf;
 import java.util.Date;
 
 public class User {
+    String foto;
     String username;
     String fullName;
     String noHp;
@@ -11,6 +12,10 @@ public class User {
     String alamat;
     String poin;
     Date sessionExpiryDate;
+
+
+
+    public void setFoto(String foto) { this.foto = foto; }
 
     public void setUsername(String username) {
         this.username = username;
@@ -44,6 +49,8 @@ public class User {
     public void setSessionExpiryDate(Date sessionExpiryDate) {
         this.sessionExpiryDate = sessionExpiryDate;
     }
+
+    public String getFoto() { return foto; }
 
     public String getUsername() {
         return username;

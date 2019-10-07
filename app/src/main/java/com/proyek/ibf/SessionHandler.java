@@ -11,6 +11,7 @@ import java.util.Date;
 
 public class SessionHandler {
     private static final String PREF_NAME = "UserSession";
+    private static final String KEY_Foto = "foto";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_EXPIRES = "expires";
     private static final String KEY_FULL_NAME = "full_name";
@@ -37,7 +38,8 @@ public class SessionHandler {
      * @param fullName
      * @param poin
      */
-    public void loginUser(String username, String fullName,String noHp,String alamat,String ttl,String email,String poin) {
+    public void loginUser(String foto, String username, String fullName,String noHp,String alamat,String ttl,String email,String poin) {
+        mEditor.putString(KEY_Foto, foto);
         mEditor.putString(KEY_USERNAME, username);
         mEditor.putString(KEY_FULL_NAME, fullName);
         mEditor.putString(KEY_NO_HP, noHp);
@@ -88,6 +90,7 @@ public class SessionHandler {
             return null;
         }
         User user = new User();
+        user.setFoto(mPreferences.getString(KEY_Foto, KEY_EMPTY));
         user.setUsername(mPreferences.getString(KEY_USERNAME, KEY_EMPTY));
         user.setFullName(mPreferences.getString(KEY_FULL_NAME, KEY_EMPTY));
         user.setNoHp(mPreferences.getString(KEY_NO_HP, KEY_EMPTY));

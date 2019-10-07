@@ -36,7 +36,8 @@
                     android:id="@+id/linearLayout"
                     android:background="@drawable/profile_bk">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/foto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/profile_round" />
@@ -50,6 +51,7 @@
                         android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="SiTampan@gmail.com"

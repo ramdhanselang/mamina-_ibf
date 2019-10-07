@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".DetailDokter"
-    tools:showIn="@layout/activity_detail">
+    tools:showIn="@layout/activity_detail_artikel">
 
 
     <LinearLayout
@@ -21,7 +21,7 @@
             android:layout_marginBottom="15dp"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/tvTglTerbit"
+                android:id="@+id/tvTglTerbitArtikel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Senin, 30 September 2019"/>
@@ -41,7 +41,7 @@
         <WebView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/wvKontenArtikel">
+            android:id="@+id/tvContent">
         </WebView>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

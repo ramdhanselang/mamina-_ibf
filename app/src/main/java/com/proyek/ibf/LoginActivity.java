@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String KEY_ALAMAT = "alamat";
     private static final String KEY_TTL = "ttl";
     private static final String KEY_EMAIL = "email";
+    private static final String KEY_Foto = "foto";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_PASSWORD = "password";
     private static final String KEY_EMPTY = "";
@@ -112,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                             //Check if user got logged in successfully
 
                             if (response.getInt(KEY_STATUS) == 0) {
-                                session.loginUser(username,response.getString(KEY_FULL_NAME),response.getString(KEY_NO_HP),response.getString(KEY_EMAIL),response.getString(KEY_ALAMAT),response.getString(KEY_TTL),response.getString(KEY_POIN));
+                                session.loginUser(response.getString(KEY_Foto),username,response.getString(KEY_FULL_NAME),response.getString(KEY_NO_HP),response.getString(KEY_EMAIL),response.getString(KEY_ALAMAT),response.getString(KEY_TTL),response.getString(KEY_POIN));
                                 loadDashboard();
 
                             }else{

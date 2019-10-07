@@ -15,30 +15,31 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-class KonselorAdapter extends RecyclerView.Adapter<KonselorAdapter.MyViewHolder> {
+public class KonselorListAdapter extends RecyclerView.Adapter<KonselorListAdapter.MyViewHolder> {
     // Buat Global variable untuk manampung context
     Context context;
     List<KonselorItem> konselor;
-    public KonselorAdapter(Context context, List<KonselorItem> data_konselor) {
+    public KonselorListAdapter(Context context, List<KonselorItem> data_konselor) {
         // Inisialisasi
         this.context = context;
         this.konselor = data_konselor;
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public KonselorListAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // Layout inflater
-        View view = LayoutInflater.from(context).inflate(R.layout.konselor_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.dokter_item, parent, false);
 
         // Hubungkan dengan MyViewHolder
-        MyViewHolder holder = new MyViewHolder(view);
+        KonselorListAdapter.MyViewHolder holder = new KonselorListAdapter.MyViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(KonselorListAdapter.MyViewHolder holder, final int position) {
         // Set widget
         holder.tvNama.setText(konselor.get(position).getNama());
+        holder.tvStatus.setText(konselor.get(position).getStatus());
         // Dapatkan url gambar
         final String urlGambarKonselor = "http://mamina.id/ibf/images/" + konselor.get(position).getFoto();
         // Set image ke widget dengna menggunakan Library Piccasso
@@ -72,13 +73,14 @@ class KonselorAdapter extends RecyclerView.Adapter<KonselorAdapter.MyViewHolder>
     public class MyViewHolder extends RecyclerView.ViewHolder {
         // Deklarasi widget
         CircleImageView ivGambar;
-        TextView tvNama;
+        TextView tvNama,tvStatus;
         public MyViewHolder(View itemView) {
 
             super(itemView);
             // inisialisasi widget
-            ivGambar = (CircleImageView) itemView.findViewById(R.id.iv);
-            tvNama = (TextView) itemView.findViewById(R.id.tv);
+            ivGambar = (CircleImageView) itemView.findViewById(R.id.foto);
+            tvNama = (TextView) itemView.findViewById(R.id.nama);
+            tvStatus = (TextView) itemView.findViewById(R.id.status);
         }
     }
 }

@@ -9,6 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ProfileActivity extends Fragment {
     private SessionHandler session;
 
@@ -17,6 +21,12 @@ public class ProfileActivity extends Fragment {
         View rootView = inflater.inflate(R.layout.activity_profile, container, false);
         session = new SessionHandler(getActivity().getApplicationContext());
         User user = session.getUserDetails();
+
+        final String urlFotoProfile = "http://mamina.id/ibf/images/" + user.getFoto();
+
+        //Foto profil
+        CircleImageView foto = rootView.findViewById(R.id.foto);
+        Picasso.with(getActivity().getApplicationContext()).load(urlFotoProfile).into(foto);
         //NAMA atas
         TextView nama = rootView.findViewById(R.id.nama);
         nama.setText(user.getUsername());

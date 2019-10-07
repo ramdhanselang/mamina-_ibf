@@ -15,10 +15,14 @@ public class DetailDokter extends AppCompatActivity {
     ImageView ivGambar;
     TextView btnKonsul;
     TextView tvNama, tvDeskripsi, tvStatus;
+    private SessionHandler session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_dokter);
+
+        session = new SessionHandler(this);
+        final User user = session.getUserDetails();
 
         // Inisialisasi
         ivGambar = (ImageView) findViewById(R.id.foto);
@@ -31,6 +35,7 @@ public class DetailDokter extends AppCompatActivity {
         btnKonsul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                user.getPoin();
                 Intent varIntent = new Intent(DetailDokter.this, Chat.class);
                 varIntent.putExtra("namadokter", tvNama.getText().toString());
                 startActivity(varIntent);
@@ -38,19 +43,18 @@ public class DetailDokter extends AppCompatActivity {
         });
 
         // Jalankan method tampil detail berita
-        showDetailBerita();
+        showDetailKonselor();
 
 
 
     }
 
-    private void showDetailBerita() {
+    private void showDetailKonselor() {
         // Tangkap data dari intent
         String nama = getIntent().getStringExtra("nama");
         String deskripsi = getIntent().getStringExtra("deskripsi");
         String status = getIntent().getStringExtra("status");
         String foto = getIntent().getStringExtra("foto");
-        ;
 
         // Set ke widget
         tvNama.setText(nama);

@@ -80,10 +80,10 @@ public class Chat extends AppCompatActivity {
                 String chatWith = i.getStringExtra("namadokter");
 
                 if(userName.equals(user.username)){
-                    addMessageBox("You:-\n" + message, 1);
+                    addMessageBox("You:-\n" + message, 2);
                 }
                 else{
-                    addMessageBox(chatWith + ":-\n" + message, 2);
+                    addMessageBox(chatWith + ":-\n" + message, 1);
                 }
             }
 
